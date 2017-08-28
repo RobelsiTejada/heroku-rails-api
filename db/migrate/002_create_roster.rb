@@ -3,7 +3,7 @@
 class CreateRoster < ActiveRecord::Migration
   def change
     create_table :roster do |t|
-      t.string :userRoster, null: false
+      t.string :userRoster, index: true, null: false
       t.integer :sportID, null: false
       t.references :user, index: true, foreign_key: true, null: false
 
