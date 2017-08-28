@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 3) do
+ActiveRecord::Schema.define(version: 4) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
-    t.text     "text",       null: false
+    t.text     "opponent",   null: false
+    t.string   "schedule",   null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,11 +25,24 @@ ActiveRecord::Schema.define(version: 3) do
   end
 
   create_table "leagues", force: :cascade do |t|
-    t.text     "text",       null: false
+    t.string   "name",        null: false
+    t.text     "user1",       null: false
+    t.integer  "userIDs",     null: false
+    t.decimal  "leagueStats", null: false
+    t.integer  "sportID",     null: false
+    t.integer  "user_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_leagues_on_user_id", using: :btree
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.string   "userRoster", null: false
+    t.integer  "sportID",    null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_leagues_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_rosters_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +57,5 @@ ActiveRecord::Schema.define(version: 3) do
 
   add_foreign_key "games", "users"
   add_foreign_key "leagues", "users"
+  add_foreign_key "rosters", "users"
 end
