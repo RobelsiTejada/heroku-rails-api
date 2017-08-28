@@ -9,7 +9,6 @@ class CreateLeagues < ActiveRecord::Migration
       t.numeric :leagueStats, null: false
       t.integer :sportID, null: false
       t.references :schedule, index: true, foreign_key: true, null: false
-      t.references :userRosters, index: true, foreign_key: true, null: false
       t.references :user, index: true, foreign_key: true, null: false
 
       t.timestamps null: false
