@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateRoster < ActiveRecord::Migration
+class CreateRosters < ActiveRecord::Migration
   def change
     create_table :rosters do |t|
       t.string :userRoster, null: false
