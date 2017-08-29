@@ -38,4 +38,28 @@ RSpec.describe 'routes for users' do
       id: '1'
     )
   end
+
+  it 'routes GET /leagues/:id to the users#leagues action' do
+    expect(get('/leagues/1')).to route_to(
+      controller: 'leagues',
+      action: 'show',
+      id: '1'
+    )
+  end
+
+  it 'routes GET /games/:id to the users#games action' do
+    expect(get('/games/1')).to route_to(
+      controller: 'games',
+      action: 'show',
+      id: '1'
+    )
+  end
+
+  it 'routes POST /leagues/:id to the leagues#create action' do
+    expect(get('/leagues/1')).to route_to('leagues#create')
+  end
+
+  it 'routes POST /games/:id to the games#create action' do
+    expect(get('/users/1')).to route_to('games#create')
+  end
 end

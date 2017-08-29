@@ -45,6 +45,24 @@ class UsersController < ProtectedController
     end
   end
 
+  def leagues
+    league = League.create(user_creds)
+    if league.valid?
+      render json: league, status: :created
+    else
+      render json: league.errors, status: :bad_request
+    end
+  end
+
+  def games
+    game = Game.create(user_creds)
+    if game.valid?
+      render json: game, status: :created
+    else
+      render json: game.errors, status: :bad_request
+    end
+  end
+
   def index
     render json: User.all
   end
