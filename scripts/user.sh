@@ -1,7 +1,7 @@
 #!/bin/bash
 
 API="${API_ORIGIN:-https://heroku-app-api.herokuapp.com}"
-URL_PATH="/users"
+URL_PATH="/user"
 curl "${API}${URL_PATH}/$ID" \
   --include \
   --request GET \
