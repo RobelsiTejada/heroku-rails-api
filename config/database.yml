@@ -1,14 +1,18 @@
 <% project_name = 'rails-api-template' %>
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+default:       &default
+  adapter:     postgresql
+  encoding:    unicode
+  pool:        <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
-  <<: *default
-  database: <%= project_name %>_development
+  <<:          *default
+  database:    <%= project_name %>_development
+
+production:
+  <<:        *default
+  database:  <%= project_name %>_production
 
 test:
-  <<: *default
-  database: <%= project_name %>_test
+  <<:          *default
+  database:    <%= project_name %>_test
