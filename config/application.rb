@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+config.action_dispatch.default_headers.merge!({
+  'Access-Control-Allow-Origin' => '*',
+  'Access-Control-Request-Method' => '*'
+})
+
 require_relative 'boot'
 
 require 'rails'
