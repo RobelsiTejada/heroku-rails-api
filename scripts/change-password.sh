@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://heroku-app-api.herokuapp.com}"
+API="${API_ORIGIN:-https://fantasysportsleague.herokuapp.com}"
 URL_PATH="/change-password"
 curl "${API}${URL_PATH}/${ID}" \
   --include \
