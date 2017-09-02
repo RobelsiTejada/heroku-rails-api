@@ -57,7 +57,7 @@ RSpec.describe UsersController do
       @user_id = JSON.parse(response.body)['user']['id']
     end
 
-    describe 'PATCH changepw' do
+    describe 'PATCH changepassword' do
       def new_password_params
         {
           old: 'foobarbaz',
@@ -66,7 +66,7 @@ RSpec.describe UsersController do
       end
 
       before(:each) do
-        patch :changepw,
+        patch :changepassword,
               params: { id: @user_id, passwords: new_password_params },
               format: :json
       end

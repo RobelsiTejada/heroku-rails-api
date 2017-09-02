@@ -4,25 +4,31 @@ require 'rails_helper'
 
 RSpec.describe 'routes for users' do
   it 'routes POST /sign-up to the users#signup action' do
-    expect(post('/sign-up')).to route_to('users#signup')
+    expect(post('/sign-up')).to route_to(
+     controller: 'users',
+          action: 'signUp',
+          id: '1')
   end
 
   it 'routes POST /sign-in to the users#signin action' do
-    expect(post('/sign-in')).to route_to('users#signin')
+    expect(post('/sign-in')).to route_to(
+     controller: 'users',
+          action: 'signIn',
+          id: '1')
   end
 
   it 'routes DELETE /sign-out/:id to the users#signout action' do
     expect(delete('/sign-out/1')).to route_to(
       controller: 'users',
-      action: 'signout',
+      action: 'signOut',
       id: '1'
     )
   end
 
-  it 'routes PATCH /change-password/:id to the users#changepw action' do
+  it 'routes PATCH /change-password/:id to the users#changepassword action' do
     expect(patch('/change-password/1')).to route_to(
       controller: 'users',
-      action: 'changepw',
+      action: 'changepassword',
       id: '1'
     )
   end
