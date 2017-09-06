@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://fantasysportsleague.herokuapp.com}"
+API="${API_ORIGIN:-https://robelsitejada.github.io/}"
 URL_PATH="/sign-up"
 curl "${API}${URL_PATH}" \
   --include \
