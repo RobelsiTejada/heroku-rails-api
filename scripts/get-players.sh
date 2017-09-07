@@ -1,5 +1,5 @@
-PI="${API_ORIGIN:-https://api.stattleship.com}"
-URL_PATH="/baseball/mlb/player_season_stats"
+API="${API_ORIGIN:-https://api.stattleship.com}"
+URL_PATH="/football/nfl/player_season_stats"
   curl "${API}${URL_PATH}" \
     --include \
     --request GET \
@@ -8,7 +8,13 @@ URL_PATH="/baseball/mlb/player_season_stats"
     --header "Accept: application/vnd.stattleship.com; version=1" \
     --data '{
        "player_season_stats": {
-      "player_id": "'mlb-david-ortiz'"
+         "per_page": "40"
+         "page":
+         "season_id": "'"${SEASON_ID}"'"
+         "team_id": "'"${TEAM_ID}"'"
+         "player_id": "'"${PLAYER_ID}"'"
+         "interval_type":
+         "on":
     }
   }'
 
