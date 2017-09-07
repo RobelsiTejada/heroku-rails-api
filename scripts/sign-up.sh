@@ -6,6 +6,7 @@ curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
+  --header "Accept: application/vnd.heroku+json; version=3" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",

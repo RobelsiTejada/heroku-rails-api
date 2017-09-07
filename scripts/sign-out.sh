@@ -7,5 +7,6 @@ curl "${API}${URL_PATH}/${ID}" \
   --request DELETE \
   --header "Authorization: Token token=$TOKEN"
   --header "Content-Type: application/json" \
+  --header "Accept: application/vnd.heroku+json; version=3" \
 
 echo
