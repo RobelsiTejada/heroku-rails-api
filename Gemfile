@@ -9,7 +9,7 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.0.1'
-gem 'stattleship-ruby', '~> 0.1.30'
+gem 'react_webpack_rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -30,3 +30,4 @@ end
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
 end
+gem 'rwr-view_helpers'

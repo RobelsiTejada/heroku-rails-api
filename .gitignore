@@ -149,3 +149,6 @@ bower.json # same
 .byebug_history
 
 # End of https://www.gitignore.io/api/rails
+/node_modules
+/app/assets/javascripts/react_bundle.js
+/app/assets/stylesheets/react_bundle.css
