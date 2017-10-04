@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post '/games' => 'games#create'
   delete '/games/:id' => 'games#destroy'
   patch '/games/:id' => 'games#update'
-  post '/leagues' => 'leagues#show'
+  get '/leagues' => 'leagues#show'
   post '/leagues' => 'leagues#create'
   delete '/leagues/:id' => 'leagues#destroy'
   patch '/leagues/:id' => 'leagues#update'
