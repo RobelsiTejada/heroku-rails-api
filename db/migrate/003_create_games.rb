@@ -5,7 +5,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.text :opponent, null: false
       t.string :schedule, null: false
-      t.references :league, index: true, foreign_key: true, null: false
+      t.references :league, foreign_key: true, null: false
       t.references :roster, index: true, foreign_key: true, null: false
       t.references :user, index: true, foreign_key: true, null: false
 
