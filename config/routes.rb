@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   post '/leagues' => 'leagues#create'
   delete '/leagues/:id' => 'leagues#destroy'
   patch '/leagues/:id' => 'leagues#update'
+  get 'auth/:provider/callback', to: 'sessions#custom'
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
 end

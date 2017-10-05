@@ -1,3 +1,6 @@
 <% if Rails.env.development? %>
-  <script src='http://localhost:8080/assets/react_bundle.js'></script>
+  <script src='http://localhost:4741/assets/react_bundle.js'></script>
+  <%= link_to "Sign in with Yahoo", user_yahoo_auth_omniauth_authorize_path %>
+  <%# Devise prior 4.1.0: %>
+  <%= link_to "Sign in with Yahoo", user_omniauth_authorize_path(:yahoo_auth) %>
 <% end %>

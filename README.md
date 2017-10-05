@@ -24,21 +24,22 @@ I would need a table for user information, a table for user rosters in each spor
 What routes will you need to be able to make the proper request to your API?
 
 GET
-1. /leagues leagues#index display all leagues rosters for user allows them so select by sport.
-2. /leagues/<sport> leagues#<sport> display all league statistics for sport (NFL, NBA, MLB and NHL).
-3. /leagues/stats leagues#stats display user win-loss record and stats
-3. /games games#index to only show games currently in season
-4. /games;game_types=full,pickem-team games#game_types full|pickem-team|pickem-group|pickem-team-list
-5. /games;game_codes=nfl,mlb game#game_codes Any valid game codes
-6. /games;seasons=2011,2012 game#seasons Any valid seasons
-
-
-POST
-1. /leagues/roster leagues#roster add your roster for each sports league.
-
-PATCH
-
-1. /leagues/roster leagues#updateroster update your roster for each sports league.
+1. get '/players' => 'players#show'
+2. post '/players' => 'players#create'
+3. delete '/players/:id' => 'players#destroy'
+4. patch '/players/:id' => 'players#update'
+5. get '/rosters' => 'rosters#show'
+6. post '/rosters' => 'rosters#create'
+7. delete '/rosters/:id' => 'rosters#destroy'
+8. patch '/rosters/:id' => 'rosters#update'
+9. get '/games' => 'games#show'
+10. post '/games' => 'games#create'
+11. delete '/games/:id' => 'games#destroy'
+12. patch '/games/:id' => 'games#update'
+13. get '/leagues' => 'leagues#show'
+14. post '/leagues' => 'leagues#create'
+15. delete '/leagues/:id' => 'leagues#destroy'
+16. patch '/leagues/:id' => 'leagues#update'
 
 
 ## 3rd Party APIs
@@ -51,8 +52,3 @@ Yahoo Sports Fantasy API https://developer.yahoo.com/fantasysports/guide/
 
 
 ## Timetable
-
-1. One day to set up the basic front end structure.
-2. Two days to set up API and go over documentation for Yahoo Sports Fantasy API.
-3. Three days to setup database and connect to API, Two days of work and One day to test and debug.
-4. Two days to complete front end formatting and complete testing.
