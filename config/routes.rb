@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'react_examples/component', to: 'react_examples#component', as: :component
-  resources :examples, except: [:new, :edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
   delete '/sign-out/:id' => 'users#signout'
@@ -25,5 +23,9 @@ Rails.application.routes.draw do
   delete '/leagues/:id' => 'leagues#destroy'
   patch '/leagues/:id' => 'leagues#update'
   get 'auth/:provider/callback', to: 'sessions#custom'
-  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_scope :user do
+    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
+    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
 end

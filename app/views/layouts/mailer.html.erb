@@ -9,5 +9,9 @@
 
   <body>
     <%= yield %>
+    <%= link_to "Sign in with Yahoo", user_yahoo_auth_omniauth_authorize_path %>
+
+    <%# Devise prior 4.1.0: %>
+    <%= link_to "Sign in with Yahoo", user_omniauth_authorize_path(:yahoo_auth) %>
   </body>
 </html>

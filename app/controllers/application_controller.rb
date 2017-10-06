@@ -64,6 +64,10 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def new_session_path(scope)
+    new_user_session_path
+  end
+
   # Restrict visibility of these methods
   private :authenticate, :current_user, :set_current_user, :record_not_found
   private :ssl_configured?, :api_request_settings
