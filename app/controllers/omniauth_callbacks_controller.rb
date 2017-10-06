@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# app/controllers/users/omniauth_callbacks_controller.rb
-
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def yahoo_auth
     @user = User.from_omniauth(request.env['omniauth.auth'])
